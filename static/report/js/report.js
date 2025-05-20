@@ -24,7 +24,7 @@
   var maxInsulinValue = 0
       ,maxCarbsValue = 0
       ,maxDailyCarbsValue = 0;
-  var maxdays = 6 * 31;
+  var maxdays = 12 * 31;
   var datastorage = {};
   var daystoshow = {};
   var sorteddaystoshow = [];
@@ -33,10 +33,18 @@
     'mg/dl': {
       low: client.settings.thresholds.bgTargetBottom
       , high: client.settings.thresholds.bgTargetTop
+      , superlow: client.settings.thresholds.bgLow
+      , superhigh: client.settings.thresholds.bgHigh
+      , ultralow: 54
+      , ultrahigh: 250
     }
     , 'mmol': {
       low: client.utils.scaleMgdl(client.settings.thresholds.bgTargetBottom)
       , high: client.utils.scaleMgdl(client.settings.thresholds.bgTargetTop)
+      , superlow: client.utils.scaleMgdl(client.settings.thresholds.bgLow)
+      , superhigh: client.utils.scaleMgdl(client.settings.thresholds.bgHigh)
+      , ultralow: client.utils.scaleMgdl(54)
+      , ultrahigh: client.utils.scaleMgdl(250)
     }
   };
   
